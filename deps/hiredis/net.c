@@ -32,7 +32,13 @@
 
 #include "fmacros.h"
 #include <sys/types.h>
+
+#ifdef __WIN32__
+#include <winsock2.h>
+#else
 #include <sys/socket.h>
+#endif
+
 #include <sys/select.h>
 #include <sys/un.h>
 #include <netinet/in.h>
